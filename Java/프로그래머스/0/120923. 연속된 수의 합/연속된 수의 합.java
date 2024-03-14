@@ -1,23 +1,16 @@
-class Solution {
-    public int[] solution(int num, int total) {
-        int[] answer = new int[num];
-		if (num%2==1) {
-			int med = total/num;
-			answer[num/2] = med;
-			for (int i = 1; i <= num/2; i++) {
-				answer[num/2-i] = med-i;
-				answer[num/2+i] = med+i;
-			}
-			
-		} else {
-			int med = total/num;
-			answer[num/2-1] = med;
-			answer[num/2] = med+1;
-			for (int i = 1; i < num/2; i++) {
-				answer[num/2-1-i] = med-i;
-				answer[num/2+i] = med+i+1;
-			}
-		}
-        return answer;
-    }
-}
+def solution(num, total):
+    if num % 2 == 1:
+        answer = [total//num]
+        num -= 1
+
+    else:
+        answer = [total//num, total//num+1]
+        num -= 2
+    
+    while num > 0:
+        answer.append(min(answer)-1)
+        answer.append(max(answer)+1)
+        num -= 2
+        
+    answer.sort()
+    return answer
