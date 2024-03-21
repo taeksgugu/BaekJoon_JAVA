@@ -8,10 +8,8 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); //선언
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));   //할당된 버퍼에 값 넣어주기
         StringTokenizer st = new StringTokenizer(br.readLine());
-        long a = Long.parseLong(st.nextToken());
-        long b = Long.parseLong(st.nextToken());
-        BigInteger ab = BigInteger.valueOf(a);
-        BigInteger bb = BigInteger.valueOf(b);
+        BigInteger ab = new BigInteger(st.nextToken());
+        BigInteger bb = new BigInteger(st.nextToken());
         ab = ab.add(bb);
         bw.write(ab + "");
         bw.close();
