@@ -9,8 +9,8 @@ public class Main {
 		A = sc.nextInt();
 		B = sc.nextInt();
         
-		C = A-B;
-        System.out.println(C);
+		
+        System.out.println(A-B);
 	}
 
 }
